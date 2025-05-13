@@ -18,5 +18,3 @@ langgraph
 langsmith
 
 yfinance
-
-duckduckgo-search
