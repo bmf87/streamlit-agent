@@ -1,20 +1,21 @@
 #
-# Pip requirements files Python 3.11
+# Pip requirements files 
+# Python 3.12
 #
-streamlit
+streamlit>=1.40.0
 
-openai
+openai>=1.70.0
 
-pandas
+pandas>=1.5.3
 
-numpy
+numpy>=1.23.5
 
-langchain
+langchain>=0.3.0
 
-langchain-community
+langchain-community>=0.3.0
 
-langgraph
+langgraph>=0.2.0
 
-langsmith
+langsmith>=0.2.0
 
-yfinance
+yfinance>=0.2.18
