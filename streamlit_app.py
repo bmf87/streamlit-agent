@@ -140,7 +140,7 @@ def main():
                 st.markdown(prompt)
 
             # Get agent response
-            response = agent_response(st.session_state.agent, prompt, user_session.id).content
+            response = agent_response(st.session_state.agent, prompt, session_id).content
             # Add to chat history
             st.session_state.messages.append({"role": "assistant", "content": response})
             with st.chat_message("assistant"):
