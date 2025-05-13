@@ -49,7 +49,7 @@ def valid_openai_api_key():
     Checks if the OpenAI API key is valid. openai_api_key gets read at startup from secrets.toml.
     It is set in the session state only when passes validity check.
     """
-    log.info(f"Validating API key: {openai_api_key}")
+    log.debug(f"Validating API key: {openai_api_key}")
     # Check if the API key starts with 'sk-'
     if openai_api_key.startswith('sk-'):
         return True
@@ -98,7 +98,7 @@ def main():
     # API key not in session state
     if "openai_api_key" not in st.session_state:
         if valid_openai_api_key():
-            log.info(f"Valid API key found: {openai_api_key}")
+            log.debug(f"Valid API key found: {openai_api_key}")
             st.session_state.openai_api_key = openai_api_key
         else:
             placeholder = st.empty()
@@ -108,9 +108,9 @@ def main():
                 do_submit = st.form_submit_button("Submit")
                 if do_submit:
                     if valid_openai_api_key():
-                        log.info(f"Valid API key entered from api_key_form: {openai_api_key}")
+                        log.debug(f"Valid API key entered from api_key_form: {openai_api_key}")
                         st.session_state.openai_api_key = openai_api_key
-                        log.info(f"(1) Setting ENV Var after api_key_form entry => OPENAI_API_KEY")
+                        log.debug(f"(1) Setting ENV Var after api_key_form entry => OPENAI_API_KEY")
                         os.environ["OPENAI_API_KEY"] = openai_api_key
                         placeholder.empty()
                     else:
@@ -120,7 +120,7 @@ def main():
     # API key in session state
     else:
         openai_api_key = st.session_state.openai_api_key
-        log.info(f"(2) Setting ENV Var because valid key in session => OPENAI_API_KEY")
+        log.debug(f"(2) Setting ENV Var because valid key in session => OPENAI_API_KEY")
         os.environ["OPENAI_API_KEY"] = openai_api_key
 
     # Setup initial agent
