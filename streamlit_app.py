@@ -40,14 +40,9 @@ def gpt_model_change():
         st.session_state.agent = init_agent(st.session_state.active_model)  
 
 
-def _get_session():
-    runtime = get_instance()
-    session_id = get_script_run_ctx().session_id
-    session_info = runtime._session_mgr.get_session_info(session_id)
-    if session_info is None:
-        raise RuntimeError("Could not get your Streamlit Session object!")
-        log.error(f"Could not get Streamlit Session object from runtime: {runtime.session_mgr}")
-    return session_info.session
+def get_session_id():
+   session_id = get_script_run_ctx().session_id
+   return session_id
 
 def valid_openai_api_key():
     """
@@ -94,8 +89,8 @@ def agent_response(agent, user_prompt, session_id):
 def main():
     global openai_api_key
     app_setup()
-    user_session = _get_session()
-    log.info(f"Created Session ID: {user_session.id}")
+    session_id = get_session_id()
+    log.info(f"Created Session ID: {session_id}")
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
