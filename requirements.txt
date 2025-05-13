@@ -1,22 +1,22 @@
 #
 # Pip requirements files Python 3.11
 #
-streamlit>=1.40.0
+streamlit
 
-openai>=1.70.0
+openai
 
-pandas>=1.5.3
+pandas
 
-numpy>=1.23.5
+numpy
 
-langchain>=0.3.0
+langchain
 
-langchaincommunity>=0.3.0
+langchaincommunity
 
-langgraph>=0.2.0
+langgraph
 
-langsmith>=0.2.0
+langsmith
 
-yfinance>=0.2.18
+yfinance
 
-duckduckgo-search>=8.0.0
+duckduckgo-search
