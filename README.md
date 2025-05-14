@@ -8,6 +8,7 @@ A template to get started with a Streamlit app that uses a basic Agent via *Lang
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-agent-reactor.streamlit.app/)
 
+*Note:* requires an OpenAI API key
 
 ## ReAct Agents - reasoning and acting interwoven
 
